@@ -22,14 +22,7 @@ public class RequestHandlerInterceptorConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         //registry.addInterceptor(requestInterceptor);
-        registry.addInterceptor(requestInterceptor)
-                .excludePathPatterns("/s/*")
-                .excludePathPatterns("/j/*")
-                .excludePathPatterns("/v1/meeting/notifyMeetingEnd")
-                .excludePathPatterns("/v1/recording/*")
-                .excludePathPatterns("/v1/user/create")
-                .excludePathPatterns("/test/*")
-                .excludePathPatterns("/v1/meeting/notifyRecordingReady");
+        registry.addInterceptor(requestInterceptor);
     }
 
     @Bean
