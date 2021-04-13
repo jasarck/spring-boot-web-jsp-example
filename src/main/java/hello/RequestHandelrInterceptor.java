@@ -15,9 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 @Component
 public class RequestHandelrInterceptor implements HandlerInterceptor {
 
-    @Autowired
-    CommonService commonService;
-
+   
     //@Autowired
     private RequestBinder reqBinder;
 
@@ -32,21 +30,8 @@ public class RequestHandelrInterceptor implements HandlerInterceptor {
     public boolean preHandle
             (HttpServletRequest request, HttpServletResponse response, Object handler)
             throws Exception {
-        this.reqBinder.setRequestedIp(request.getRemoteAddr());
-        if(request.getHeader("X-authKey") == null){
-            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-            return false;
-        }else{
-            String authKey=request.getHeader("X-authKey");
-            this.reqBinder.setAuthKey(authKey);
-            System.out.println("authKey  :"+authKey);
-            if(commonService.isAuthKeyValid(authKey)){
-                return true;
-            }else{
-                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-                return false;
-            }
-        }
+         System.out.println("Pre Handle method is Calling");
+        return true;
     }
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response,
