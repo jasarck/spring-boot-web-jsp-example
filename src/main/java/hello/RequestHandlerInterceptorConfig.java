@@ -21,10 +21,10 @@ public class RequestHandlerInterceptorConfig extends WebMvcConfigurerAdapter {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(requestInterceptor);
         //registry.addInterceptor(requestInterceptor);
-        //registry.addInterceptor(requestInterceptor);
-        registry.addInterceptor(requestInterceptor)
-               .excludePathPatterns("/**/*.jsp");
+       // registry.addInterceptor(requestInterceptor)
+        //       .excludePathPatterns("/**/*.jsp");
     }
 
     @Bean
