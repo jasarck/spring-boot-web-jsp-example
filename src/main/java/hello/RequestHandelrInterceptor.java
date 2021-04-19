@@ -47,7 +47,6 @@ public class RequestHandelrInterceptor implements HandlerInterceptor {
                  return false;
              }
          }
-        return true;
     }
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response,
