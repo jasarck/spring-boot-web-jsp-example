@@ -24,6 +24,8 @@ public class RequestHandlerInterceptorConfig extends WebMvcConfigurerAdapter {
         //registry.addInterceptor(requestInterceptor);
         //registry.addInterceptor(requestInterceptor);
         registry.addInterceptor(requestInterceptor)
+               .addPathPatterns("/**")
+               .addPathPatterns("/*")
                .excludePathPatterns("/test/testjsp")
                .excludePathPatterns("/fail")
                .excludePathPatterns("/test*")
