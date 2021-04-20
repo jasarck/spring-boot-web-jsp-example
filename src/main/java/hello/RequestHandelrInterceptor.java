@@ -33,8 +33,8 @@ public class RequestHandelrInterceptor implements HandlerInterceptor {
          System.out.println("Pre Handle method is Calling");
         if(request.getHeader("X-authKey") == null){
     		 System.out.println("Inside BAD Request");
-            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-             //response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            //response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
              return false;
          }
     	 else{
