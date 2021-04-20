@@ -32,7 +32,7 @@ public class RequestHandlerInterceptorConfig extends WebMvcConfigurerAdapter {
                .excludePathPatterns("/**/*.jsp");
     }
 
-    @Bean
+   // @Bean
     public TomcatServletWebServerFactory tomcatFactory() {
         return new TomcatServletWebServerFactory() {
             @Override
